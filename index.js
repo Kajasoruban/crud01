@@ -1,5 +1,7 @@
-require("dotenv").config();
-const express=require("express");
+require("dotenv").config();//dotenv is nodemodule, with this we can use variables which is inside .env file,
+// anywhere within this directory, by using
+
+const express=require("express");//
 
 const mongoose = require('mongoose');
 
