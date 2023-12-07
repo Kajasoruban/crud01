@@ -24,6 +24,7 @@ app.listen(3001,()=>{
     console.log(`server started at port number ${3001}`);
 });
 
-app.get("/",(req,res)=>{
-    res.send("response received!");
-})
+const routes=require("./routes/routes");
+app.use("/api",routes);
+
+
