@@ -1,24 +1,25 @@
 
 const express = require("express");
-const router = express.Router();
-const Model = require("../models/model");
-// const Model = require("../models/model2");
+const router = express.Router();/*with express.Router() we can create create new router object of express and 
+we can use it to handle requests. it can handle multiple requests easily*/
+
+const Model = require("../models/model");/*we are importing mongoose model we created in model file 
+which is in models folder */
 
 
-//Post Method
-// router.post('/post', (req, res) => {
-//     res.send('Post API')
-// });
+
 
 //Get by form Method
-router.get('/form', (req, res) => {
-    res.sendFile(__dirname+"/index.html")
-})
+// router.get('/form', (req, res) => {
+//     res.sendFile(__dirname+"/index.html")
+// });
 
-router.post("/formdata",(req,res)=>{
+// router.post("/formdata",(req,res)=>{
     
-    res.send(req.body);
-})
+//     res.send(req.body);
+// })
+
+
 
 //Post using Model
 router.post('/post', async(req, res) => {
@@ -34,6 +35,10 @@ router.post('/post', async(req, res) => {
         res.status(400).json({message: error.message})
     }
 });
+/* */
+
+
+
 
 //getall from database collection
 router.get("/getAll", async(req,res)=>{
@@ -86,4 +91,4 @@ router.delete("/delete/:id", async(req,res)=>{
 
 
 
-module.exports=router;
+module.exports=router;/*exporting our routes which is inside router */

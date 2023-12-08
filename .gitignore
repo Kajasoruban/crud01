@@ -1,3 +1,6 @@
+// we can specify name of the folder or file which have to be ignored by git.
+
 node_modules
 
 .env
+
