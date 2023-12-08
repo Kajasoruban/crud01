@@ -1,30 +1,15 @@
-
 const express = require("express");
 const router = express.Router();
-const Model = require("../models/model");
-// const Model = require("../models/model2");
+const Model = require("../models/model2");
 
 
-//Post Method
-// router.post('/post', (req, res) => {
-//     res.send('Post API')
-// });
-
-//Get by form Method
-router.get('/form', (req, res) => {
-    res.sendFile(__dirname+"/index.html")
-})
-
-router.post("/formdata",(req,res)=>{
-    
-    res.send(req.body);
-})
 
 //Post using Model
 router.post('/post', async(req, res) => {
     const data = new Model({
         name: req.body.name,
-        age: req.body.age
+        age: req.body.age,
+        address:req.body.address
     })
     try{
         const dataToSave = await data.save();

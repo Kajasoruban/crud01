@@ -29,4 +29,9 @@ app.listen(3001,()=>{
 const routes=require("./routes/routes");
 app.use("/api",routes);
 
+const routes2=require("./routes/routes2");
+app.use("/api2",routes2);
+
+
+
 
