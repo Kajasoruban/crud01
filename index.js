@@ -13,12 +13,11 @@ to database by using process.env and our variable name which we specified in .en
 string
 */
 
-
 mongoose.connect(mongoString);/*we our using our mongostring variable to connect to database */
 const database = mongoose.connection;/*we are assigning that connection to a variable */
 database.on('error', (error) => {
     console.log(error)
-})
+});
 /*we are make it listen to that connection and if any error occur evoke a function which will console 
 error which we got when connecting*/
 
@@ -33,6 +32,9 @@ messege we specified in that anonymous function */
 const app=express();/*we are connecting express application to a variable named app */
 app.use(express.json());/*by using use method of express to use express.json middleware which is 
 help us to  parse json request and store it to req.body*/
+
+app.use(express.urlencoded({extended:false}));
+
 
 app.listen(3001,()=>{
     console.log(`server started at port number ${3001}`);

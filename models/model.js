@@ -10,7 +10,7 @@ const dataSchema = new mongoose.Schema({
         type: Number
     }
 });
-/*we are creating new schema for our documents which we will store in database. hre we use properties 
+/*we are creating new schema for our documents which we will store in database. here we use properties 
 and value required or not and type of it */
 
 module.exports = mongoose.model('Data', dataSchema);/*we are creating a mongoose model based on dataschema

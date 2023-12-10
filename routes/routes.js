@@ -10,14 +10,23 @@ which is in models folder */
 
 
 //Get by form Method
-// router.get('/form', (req, res) => {
-//     res.sendFile(__dirname+"/index.html")
-// });
+router.get('/form', (req, res) => {
+    res.sendFile(__dirname+"/index.html")
+});
 
-// router.post("/formdata",(req,res)=>{
-    
-//     res.send(req.body);
-// })
+router.post("/formdata",async(req,res)=>{
+    const data = new Model({
+        name: req.body.name,
+        age: req.body.age
+    })
+    try{
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave)
+    }
+    catch(error){
+        res.status(400).json({message: error.message})
+    }
+})
 
 
 
